@@ -1,0 +1,39 @@
+/* new tweet section */
+main .new-tweet {
+  background-color: lightblue;
+  margin: auto 2em auto 2em;
+  padding: 3%;
+  border-radius: 10px;
+  border: 1px solid blue;
+}
+
+/* h2 in new tweet */
+main section h2 {
+  border-bottom: 1px solid black;
+  margin-top: auto;
+  margin-bottom: 5%;
+}
+
+/* new tweet form */
+main section .new-tweet-form {
+  position: relative;
+}
+
+/* new tweet counter */
+form .counter {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/* new tweet text input*/
+.new-tweet-form textarea{
+  width: 100%;
+  display: block;
+}
+
+/* new tweet form submit*/
+.new-tweet-form .form-submit{
+  display: block;
+  margin-top: 5px;
+}

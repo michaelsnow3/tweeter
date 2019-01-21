@@ -1,5 +1,5 @@
+/* nav bar */
 nav {
-  margin-top: -140px;
   position: fixed;
   height: 80px;
   width: 100%;
@@ -9,12 +9,14 @@ nav {
   padding-left: 2em;
 }
 
+/* nav bar logo */
 #nav-bar .logo {
   width: 80px;
   height: 80px;
   float: left;
 }
 
+/* nav bar header */
 #nav-bar .header {
   margin-left: 10px;
   float: left;
