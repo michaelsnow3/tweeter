@@ -30,6 +30,8 @@ form .counter {
 .new-tweet-form textarea{
   width: 100%;
   display: block;
+  resize: vertical;
+  min-height: 3em;
 }
 
 /* new tweet form submit*/
