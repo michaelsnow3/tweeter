@@ -1,0 +1,46 @@
+/* tweet */
+#tweet-container .tweet {
+  margin: 2em;
+  border-radius: 10px;
+  border: 1px solid blue;
+  overflow: hidden;
+  height: 200px;
+}
+
+/* tweet header */
+.tweet header {
+  background: lightgray;
+  height: 50px;
+  width: 100%;
+  padding: 5px
+
+}
+
+/* name */
+.tweet header .name {
+  display: inline-block;
+  margin: 0;
+  font-size: 1.5em;
+  vertical-align: top;
+  font-weight: bold;
+}
+
+/* username */
+.tweet header .username {
+  display: inline-block;
+  margin: 0;
+  font-style: italic;
+  float: right;
+}
+
+
+/* user icon */
+.tweet .icon {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  border-radius: 10px;
+  border: 1px solid blue;
+  background-color: lightgreen;
+  overflow: hidden;
+}

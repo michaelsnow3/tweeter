@@ -19,6 +19,9 @@
     <!-- New Tweet CSS  -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
+    <!-- Tweet CSS  -->
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
+
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
@@ -36,6 +39,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets/" class="new-tweet-form">
@@ -44,7 +48,21 @@
           <span class="counter">140</span>
         </form>
       </section>
+
+      <section id="tweet-container">
+        <article class="tweet">
+          <header>
+            <img class="icon" src="/images/bird.png">
+            <p class="name">Leslie Nielsen</p>
+            <p class="username">@asdf</p>
+          </header>
+          <div class"tweet-content">this is my tweet</div>
+          <footer>footer content</footer>
+        </article>
+      </section>
+
     </main>
+
 
     <script src="./scripts/composer-char-counter.js"></script>
 
