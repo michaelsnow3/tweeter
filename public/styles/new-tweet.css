@@ -26,6 +26,7 @@ form .counter {
   right: 0;
 }
 
+
 /* new tweet text input*/
 .new-tweet-form textarea{
   width: 100%;
@@ -38,4 +39,9 @@ form .counter {
 .new-tweet-form .form-submit{
   display: block;
   margin-top: 5px;
+}
+
+/* used to change colour of character counter when 140 limit is reached */
+.charLimit {
+  color: red;
 }
