@@ -1,5 +1,5 @@
 /* tweet */
-#tweet-container .tweet {
+.tweet {
   margin: 2em;
   border-radius: 10px;
   border: 1px solid blue;
@@ -10,7 +10,7 @@
 }
 
 /* tweet hover */
-#tweet-container .tweet:hover {
+#tweets-container .tweet:hover {
     opacity: 1;
 }
 
@@ -42,8 +42,8 @@
   font-weight: bold;
 }
 
-/* username */
-.tweet header .username {
+/* handle */
+.tweet header .handle {
   display: inline-block;
   padding: 5px;
   margin: 0;
@@ -77,6 +77,6 @@
 }
 
 /* tweet footer icons hover */
-#tweet-container .tweet:hover .icons {
+#tweets-container .tweet:hover .icons {
   opacity: 1;
 }
