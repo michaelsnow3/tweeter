@@ -26,30 +26,22 @@ $( document ).ready(function() {
 
   //function that takes in tweet and displays it in tweet container
   function createTweetElement(tweetObj) {
-    const article = $('<article class="tweet"></article>');
-
-    //create header and add image name and handle components
-    const header = $("<header></header>");
-
-    header.append(`<img class="userPic" src=${tweetObj.user.avatars.small}>`)
-    header.append(`<p class="name">${tweetObj.user.name}</p>`)
-    header.append(`<p class="handle">${tweetObj.user.handle}</p>`)
-
-    header.appendTo(article);
-
-    //add tweet content to article
-    article.append(`<p class="tweet-content">${tweetObj.content.text}</p>`);
-
-    //create footer and add time created and add the time created and the icons
-    const footer = $("<footer></footer>");
-
-    footer.append(tweetObj.created_at);
-    footer.append('<img class="icons" src="/images/flag.png">');
-    footer.append('<img class="icons" src="/images/refresh.png">');
-    footer.append('<img class="icons" src="/images/heart.png">');
-
-    article.append(footer);
-
+    const article = $(`
+      <article class="tweet">
+        <header>
+          <img class="userPic" src=${tweetObj.user.avatars.small}>
+          <p class="name">${tweetObj.user.name}</p>
+          <p class="handle">${tweetObj.user.handle}</p>
+        </header>
+        <p class="tweet-content">${tweetObj.content.text}</p>
+        <footer>
+          ${tweetObj.created_at}
+          <img class="icons" src="/images/flag.png">
+          <img class="icons" src="/images/refresh.png">
+          <img class="icons" src="/images/heart.png">
+        </footer>
+      </article>
+      `);
     return article;
   }
 
