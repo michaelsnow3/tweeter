@@ -63,6 +63,7 @@ function renderTweets(tweets) {
       data: $(this).serialize()
     })
     .done(function(msg) {
+      loadTweets();
       console.log("data saved");
     })
     .fail(function() {
