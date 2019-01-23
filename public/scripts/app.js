@@ -57,17 +57,26 @@ function renderTweets(tweets) {
   //AJAX POST request for new tweet form
   $('.new-tweet-form').on("submit", function(event) {
     event.preventDefault();
-    $.ajax({
-      type: 'POST',
-      url: '/tweets',
-      data: $(this).serialize()
-    })
-    .done(function(msg) {
-      loadTweets();
-      console.log("data saved");
-    })
-    .fail(function() {
-      console.log( "error saving tweet" );
-    });
+
+    //check if message is valid
+    const counter = +$(this).children(".counter")['0'].textContent;
+    if(counter < 0) {
+      alert("Over character limit");
+    } else if(counter === 140) {
+      alert("Tweet area is empty");
+    } else {
+      $.ajax({
+        type: 'POST',
+        url: '/tweets',
+        data: $(this).serialize()
+      })
+      .done(function(msg) {
+        loadTweets();
+        console.log("data saved");
+      })
+      .fail(function() {
+        console.log( "error saving tweet" );
+      });
+    }
   });
 });
