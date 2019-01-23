@@ -78,7 +78,7 @@ $( document ).ready(function() {
         url: '/tweets',
         data: $(this).serialize()
       })
-      .done(function(msg) {
+      .done(function() {
         $(".new-tweet-form textarea")[0].value = '';
         loadTweets();
         console.log("data saved");
@@ -88,4 +88,7 @@ $( document ).ready(function() {
       });
     }
   });
+
+  //compose button handle function
+
 });
