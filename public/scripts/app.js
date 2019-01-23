@@ -71,6 +71,7 @@ function renderTweets(tweets) {
         data: $(this).serialize()
       })
       .done(function(msg) {
+        $(".new-tweet-form textarea")[0].value = '';
         loadTweets();
         console.log("data saved");
       })
