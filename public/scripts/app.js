@@ -66,6 +66,8 @@ function renderTweets(tweets) {
 
   //function that takes in tweet and displays it in tweet container
   function createTweetElement(tweetObj) {
+
+    //convert time in miliseconds to date
     const tweetDate = new Date(tweetObj.created_at);
     return $(`
       <article class="tweet">
@@ -84,6 +86,19 @@ function renderTweets(tweets) {
       </article>
       `);
   }
+
+  //AJAX POST request for new tweet form
+  $('.new-tweet-form').on("submit", function(event) {
+    event.preventDefault();
+    $.ajax({
+      type: 'POST',
+      url: '/tweets',
+      data: $(this).serialize()
+    })
+    .done(function(msg) {
+      console.log("data saved");
+    })
+  });
 
  renderTweets(data);
 });
