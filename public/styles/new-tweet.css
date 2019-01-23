@@ -33,7 +33,7 @@ form .counter {
   display: block;
   resize: vertical;
   min-height: 3em;
-  overflow-wrap: normal;
+  word-wrap: break-word;
 }
 
 /* new tweet form submit*/
