@@ -60,13 +60,14 @@ function renderTweets(tweets) {
     // takes return value and appends it to the tweets container
     tweets.forEach((tweet) => {
       const addTweet = createTweetElement(tweet);
-      $('#tweets-container').append(addTweet);
+      $('#tweets-container').prepend(addTweet);
     })
 }
 
   //function that takes in tweet and displays it in tweet container
   function createTweetElement(tweetObj) {
-    const article = $(`
+    const tweetDate = new Date(tweetObj.created_at);
+    return $(`
       <article class="tweet">
         <header>
           <img class="userPic" src=${tweetObj.user.avatars.small}>
@@ -75,14 +76,13 @@ function renderTweets(tweets) {
         </header>
         <p class="tweet-content">${tweetObj.content.text}</p>
         <footer>
-          ${tweetObj.created_at}
+          ${tweetDate.toDateString()}
           <img class="icons" src="/images/flag.png">
           <img class="icons" src="/images/refresh.png">
           <img class="icons" src="/images/heart.png">
         </footer>
       </article>
       `);
-    return article;
   }
 
  renderTweets(data);
