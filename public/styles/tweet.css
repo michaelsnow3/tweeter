@@ -52,6 +52,7 @@
 .tweet p.tweet-content {
   margin: 0;
   padding: 1em;
+  word-wrap: break-word;
 }
 
 /* tweet footer */

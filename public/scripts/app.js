@@ -7,6 +7,7 @@
 $( document ).ready(function() {
 
   function renderTweets(tweets) {
+
     // loops through tweets
       // calls createTweetElement for each tweet
       // takes return value and appends it to the tweets container
@@ -79,7 +80,12 @@ $( document ).ready(function() {
         data: $(this).serialize()
       })
       .done(function() {
+
+        //reset compose tweet inputs after tweet is created
         $(".new-tweet-form textarea")[0].value = '';
+        $(".new-tweet-form .counter").text(140);
+        $("#tweets-container").empty();
+
         loadTweets();
         console.log("data saved");
       })
@@ -90,5 +96,11 @@ $( document ).ready(function() {
   });
 
   //compose button handle function
+  $("#nav-bar button").on("click", function(event) {
+    $("main .new-tweet").slideToggle('fast', function() {
 
+      //focus on textarea when anamation completes
+      $(".new-tweet-form textarea").focus();
+    });
+  });
 });
