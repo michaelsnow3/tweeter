@@ -5,6 +5,13 @@
   border: 1px solid blue;
   overflow: hidden;
   height: 200px;
+  position: relative;
+  opacity: 0.5;
+}
+
+/* tweet hover */
+#tweet-container .tweet:hover {
+    opacity: 1;
 }
 
 /* tweet header */
@@ -12,8 +19,18 @@
   background: lightgray;
   height: 50px;
   width: 100%;
-  padding: 5px
+  padding: 5px;
+}
 
+/* user icon */
+.tweet .userPic {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  border-radius: 10px;
+  border: 1px solid blue;
+  background-color: lightgreen;
+  overflow: hidden;
 }
 
 /* name */
@@ -28,19 +45,38 @@
 /* username */
 .tweet header .username {
   display: inline-block;
+  padding: 5px;
   margin: 0;
   font-style: italic;
   float: right;
 }
 
+/* tweet content */
+.tweet p.tweet-content {
+  margin: 0;
+  padding: 1em;
+}
 
-/* user icon */
-.tweet .icon {
-  display: inline-block;
-  height: 40px;
-  width: 40px;
-  border-radius: 10px;
-  border: 1px solid blue;
-  background-color: lightgreen;
-  overflow: hidden;
+/* tweet footer */
+.tweet footer {
+  width: 95%;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  border-top: 1px solid lightgray;
+  padding-top: 5px;
+  padding-right: 5px;
+}
+
+/* tweet footer icons */
+.tweet footer .icons {
+  opacity: 0;
+  height: 15px;
+  width: 15px;
+  float: right;
+}
+
+/* tweet footer icons hover */
+#tweet-container .tweet:hover .icons {
+  opacity: 1;
 }
