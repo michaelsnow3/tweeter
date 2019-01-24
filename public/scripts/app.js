@@ -7,14 +7,21 @@
 $( document ).ready(function() {
 
   function renderTweets(tweets) {
+    if($(".tweet").val() === undefined){
 
-    // loops through tweets
+      // loops through tweets
       // calls createTweetElement for each tweet
       // takes return value and appends it to the tweets container
       tweets.forEach((tweet) => {
         const addTweet = createTweetElement(tweet);
         $('#tweets-container').prepend(addTweet);
-      })
+      });
+    } else {
+
+      //just add new tweet instead of reloading all
+      const newTweet = createTweetElement(tweets[tweets.length - 1]);
+      $('#tweets-container').prepend(newTweet);
+    }
   }
 
   //function used to prevent XSS
@@ -84,7 +91,6 @@ $( document ).ready(function() {
         //reset compose tweet inputs after tweet is created
         $(".new-tweet-form textarea")[0].value = '';
         $(".new-tweet-form .counter").text(140);
-        $("#tweets-container").empty();
 
         loadTweets();
         console.log("data saved");
