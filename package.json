@@ -18,6 +18,8 @@
     "mongodb": "^2.2.36"
   },
   "devDependencies": {
+    "eslint": "^5.12.1",
+    "eslint-config-lighthouselabs": "github:lighthouse-labs/eslint-config-lighthouselabs",
     "nodemon": "^1.9.2"
   }
 }
