@@ -31,11 +31,39 @@ $( document ).ready(function() {
     return p.innerHTML;
   }
 
+  //time since function
+  function timeSince(date) {
+
+    let seconds = Math.floor((new Date() - date) / 1000);
+
+    let interval = Math.floor(seconds / 31536000);
+
+    if (interval > 1) {
+      return interval + " years";
+    }
+    interval = Math.floor(seconds / 2592000);
+    if (interval > 1) {
+      return interval + " months";
+    }
+    interval = Math.floor(seconds / 86400);
+    if (interval > 1) {
+      return interval + " days";
+    }
+    interval = Math.floor(seconds / 3600);
+    if (interval > 1) {
+      return interval + " hours";
+    }
+    interval = Math.floor(seconds / 60);
+    if (interval > 1) {
+      return interval + " minutes";
+    }
+    return Math.floor(seconds) + " seconds";
+  }
+
   //function that takes in tweet and displays it in tweet container
   function createTweetElement(tweetObj) {
-
-    //convert time in miliseconds to date
-    const tweetDate = new Date(tweetObj.created_at);
+    let tweetDate = new Date(tweetObj.created_at);
+    let timeSinceTweet = timeSince(tweetDate);
 
     return $(`
       <article class="tweet">
@@ -46,7 +74,7 @@ $( document ).ready(function() {
         </header>
           <p class="tweet-content">${escape(tweetObj.content.text)}</p>
         <footer>
-          ${tweetDate.toDateString()}
+          ${timeSinceTweet}
           <img class="icons" src="/images/flag.png">
           <img class="icons" src="/images/refresh.png">
           <img class="icons" src="/images/heart.png">

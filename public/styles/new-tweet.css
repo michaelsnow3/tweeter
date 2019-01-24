@@ -1,6 +1,6 @@
 /* new tweet section */
 main .new-tweet {
-
+  display: none;
   background-color: lightblue;
   margin: auto 2em auto 2em;
   padding: 3%;
