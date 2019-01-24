@@ -48,3 +48,9 @@ form .counter {
 .charLimit {
   color: red;
 }
+
+/* style for error messege */
+.new-tweet-form p.error-message {
+    color: #D8000C;
+    background-color: #FFD2D2;
+}

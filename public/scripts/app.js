@@ -76,11 +76,17 @@ $( document ).ready(function() {
 
     //check if message is valid
     const counter = +$(this).children(".counter")['0'].textContent;
+    const errorPara = $('.new-tweet-form .error-message');
     if(counter < 0) {
-      alert("Over character limit");
+      errorPara.hide()
+      errorPara.text('To many characters!');
+      errorPara.slideDown("medium");
     } else if(counter === 140) {
-      alert("Tweet area is empty");
+      errorPara.hide()
+      errorPara.text('Tweet area is empty');
+      errorPara.slideDown("medium");
     } else {
+      errorPara.hide();
       $.ajax({
         type: 'POST',
         url: '/tweets',
